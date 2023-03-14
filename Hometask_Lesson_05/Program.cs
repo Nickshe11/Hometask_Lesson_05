@@ -46,7 +46,7 @@ namespace Hometask
             {
                return journal.Equals(num);
             }
-            public static bool operator !=(Journal journal, int num) 
+            public static bool operator !=(Journal journal, int num)
             {
                 return !(journal.Equals(num));
             }
