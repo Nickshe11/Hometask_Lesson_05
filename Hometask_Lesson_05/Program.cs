@@ -40,7 +40,7 @@ namespace Hometask
             }
             public override int GetHashCode()
             {
-                return this.ToString().GetHashCode();
+                return this.ToString().GetHashCode(); 
             }
             public static bool operator ==(Journal journal, int num)
             {
