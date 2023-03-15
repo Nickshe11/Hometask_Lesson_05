@@ -5,7 +5,7 @@ namespace Hometask
 {
     class MyClass
     {
-        class Journal
+        class Journal //Класс для задания 1
         {
             private int _number;
             public int Number
@@ -51,6 +51,38 @@ namespace Hometask
                 return !(journal.Equals(num));
             }
 
+        }
+
+        //Класс для задания 3
+        class Book
+        {
+            public string Author { get; set; }
+            public string Name { get; set; }
+
+            public override string ToString()
+            {
+                return "Author: "+Author+" Name: "+ Name;
+            }
+            public override bool Equals(object obj)
+            {
+                if (obj == null) return false;
+                Book objBook = obj as Book;
+                if (objBook == null) return false;
+                else return Equals(objBook);                
+            }
+            public bool Equals (Book other)
+            {
+                if ((this.Author == other.Author) && (this.Name == other.Name)) return true;
+                else return false;
+            }
+            public override int GetHashCode()
+            {
+                return Author.GetHashCode()+Name.GetHashCode();
+            }
+        }
+        class Storage
+        {
+            public List<Book> list = new List<Book>();
         }
         static void Main(string[] args)
         {
